@@ -7,16 +7,23 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatTableModule } from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { StudentsDetailComponent } from './pages/student-detail/students-detail.component';
+import { NameLastnamePipe } from '../../../../shared/pipes/name-lastname.pipe';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { HighlightDirective } from '../../../../shared/directives/highlight.directive';
 
 
 @NgModule({
   declarations: [
     StudentsComponent,
-    StudentsDetailComponent
+    StudentsDetailComponent,
+    NameLastnamePipe,
+    HighlightDirective,
+    
+    
    
   ],
   imports: [
@@ -28,8 +35,9 @@ import { StudentsDetailComponent } from './pages/student-detail/students-detail.
     MatInputModule,
     ReactiveFormsModule,
     MatTableModule,
-    SharedModule,
     MatDialogModule,
+    MatExpansionModule,
+    FormsModule,
   ]
 })
 export class StudentsModule { }
