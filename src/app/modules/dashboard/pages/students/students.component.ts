@@ -4,6 +4,7 @@ import { StudentsService } from '../../../../core/services/students.service'; //
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { SharedModule } from '../../../../shared/shared.module';
+import { generateRandomString } from '../../../../shared/utils';
 
 
 
@@ -18,7 +19,7 @@ import { SharedModule } from '../../../../shared/shared.module';
 export class StudentsComponent implements OnInit {
   
   searchText: string = '';
-  displayedColumns: string[] = ['id', 'name', 'lastname', 'age', 'email', 'country', 'address', 'course', 'actions'];
+  displayedColumns: string[] = ['id','name', 'lastname', 'age', 'email', 'country', 'address', 'course', 'actions'];
   dataSource: Student[] = [];
   students: any;
   filteredDataSource: Student[] | undefined;
@@ -32,6 +33,7 @@ export class StudentsComponent implements OnInit {
     private snackBar: MatSnackBar
   ) {
     this.studentForm = this.fb.group({
+          id: [generateRandomString(6),Validators.required],
           name: ['', Validators.required],
           lastname: ['', Validators.required],
           age: ['', [Validators.required, Validators.min(1)]],
@@ -54,7 +56,7 @@ export class StudentsComponent implements OnInit {
 
   // Cargar los estudiantes desde localStorage
   ngOnInit(): void {
-    this.dataSource = this.studentsService.getStudents();
+    this.dataSource = this.studentsService.getStudents(); 
   }
 
   enableEdit(index: number): void {
@@ -92,7 +94,6 @@ export class StudentsComponent implements OnInit {
     if (filterValue) {
       this.filteredDataSource = this.dataSource.filter((student) =>
         student.name.toLowerCase().includes(filterValue) ||
-        student.lastname.toLowerCase().includes(filterValue)||
         student.lastname.toLowerCase().includes(filterValue)
       );
     } else {

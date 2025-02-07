@@ -33,10 +33,9 @@ import { AppRoutingModule } from './app-routing.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ToolbarComponent,
-    HomeComponent,
     HeaderFontSizeDirective,
     NavmenuComponent,
+    ToolbarComponent
     
   ],
 
