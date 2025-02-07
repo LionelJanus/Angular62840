@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-RouterModule
 import { CommonModule } from '@angular/common';
 import { HighlightDirective } from './directives/highlight.directive';
 import { NameLastnamePipe } from './pipes/name-lastname.pipe';
@@ -28,11 +27,13 @@ import { StudentFilterPipe } from './pipes/student-filter.pipe';
 
 
 @NgModule({
-  declarations: [ NameLastnamePipe,HighlightDirective,StudentFilterPipe,],
+  declarations: [ ],
 
   exports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
+    MatSidenavModule,
     ReactiveFormsModule,
     MatMenuModule,
     MatButtonModule,
@@ -48,9 +49,11 @@ import { StudentFilterPipe } from './pipes/student-filter.pipe';
     FormsModule,
     MatTableModule,
     RouterModule,
+  
     MatToolbarModule,
     MatSnackBarModule,
     MatSlideToggleModule,
+  
     MatExpansionModule
   ]
 })
