@@ -14,6 +14,7 @@ import { StudentsDetailComponent } from './pages/student-detail/students-detail.
 import { NameLastnamePipe } from '../../../../shared/pipes/name-lastname.pipe';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { HighlightDirective } from '../../../../shared/directives/highlight.directive';
+import { AppRoutingModule } from '../../../../app-routing.module';
 
 
 @NgModule({
@@ -38,6 +39,7 @@ import { HighlightDirective } from '../../../../shared/directives/highlight.dire
     MatDialogModule,
     MatExpansionModule,
     FormsModule,
+    AppRoutingModule
   ]
 })
 export class StudentsModule { }

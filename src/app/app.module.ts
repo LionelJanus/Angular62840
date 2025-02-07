@@ -23,6 +23,7 @@ import { HeaderFontSizeDirective } from './shared/directives/header-font-size.di
 import { NavmenuComponent } from './modules/dashboard/components/navmenu/navmenu.component';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { StudentsModule } from './modules/dashboard/pages/students/students.module';
+import { AppRoutingModule } from './app-routing.module';
 
 
 
@@ -36,10 +37,6 @@ import { StudentsModule } from './modules/dashboard/pages/students/students.modu
     HomeComponent,
     HeaderFontSizeDirective,
     NavmenuComponent,
-    
-    
-  
-    
     
   ],
 
@@ -61,12 +58,8 @@ import { StudentsModule } from './modules/dashboard/pages/students/students.modu
     MatMenuModule,
     ReactiveFormsModule,
     MatExpansionModule,
-    RouterOutlet,
+    AppRoutingModule
     
-    
-   
-    
-   
   ],
   providers: [
     provideAnimationsAsync()
